@@ -123,3 +123,12 @@ ON mining_sessions(user_id);
 
 CREATE INDEX IF NOT EXISTS idx_rewards_user
 ON reward_transactions(user_id);
+INSERT INTO tasks
+(task_key, title, reward_tgr)
+VALUES
+(
+    'join_group',
+    'Join TGram Group',
+    500
+)
+ON CONFLICT (task_key) DO NOTHING;
